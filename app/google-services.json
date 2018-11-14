@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "960263684484",
+    "firebase_url": "https://sipekaapill.firebaseio.com",
+    "project_id": "sipekaapill",
+    "storage_bucket": "sipekaapill.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960263684484:android:03e36846ed0386a3",
+        "android_client_info": {
+          "package_name": "com.simap.dishub.far"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "960263684484-pjl4vvjeig08l6mffv3ui9l5e4shq2c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm_9XVJQojzBUl0gf70a-yPMbahkAgxvQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

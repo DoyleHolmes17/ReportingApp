@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simap.dishub.far">
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="17" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- <uses-permission android:name="android.permission.LOCATION_HARDWARE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- <uses-permission android:nafar.permission.MAPS_RECEIVE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo2"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.simap.dishub.far.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Firebase Notifications -->
+        <service android:name="com.simap.dishub.far.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.simap.dishub.far.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
+        <activity
+            android:name="com.simap.dishub.far.LoginActivity"
+            android:label="@string/title_activity_login"/>
+
+        <activity
+            android:name="com.simap.dishub.far.ChatActivity"
+            android:label="Chat Room"
+            android:parentActivityName="com.simap.dishub.far.MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.MenuActivity" />
+        </activity>
+
+        <activity
+            android:name="com.simap.dishub.far.Pegawai1Activity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:label="SiPekaAPILL"/>
+        <activity
+            android:name="com.simap.dishub.far.MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.simap.dishub.far.LaporanActivity"
+            android:label="Pelaporan"
+            android:parentActivityName="com.simap.dishub.far.MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.MenuActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.TeknisiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.simap.dishub.far.Teknisi1Activity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:label="@string/app_name"/>
+        <activity
+            android:name="com.simap.dishub.far.Menu1Activity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:label="@string/app_name"/>
+        <activity
+            android:name="com.simap.dishub.far.PegawaiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.simap.dishub.far.RegisterActivity"
+            android:label="Add User"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.RegisterUserActivity"
+            android:label="Daftar"/>
+        <activity
+            android:name="com.simap.dishub.far.ForgetPassActivity"
+            android:label="Lupa Password"/>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminActivity"
+            android:label="Cek Pelaporan"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminCloseActivity"
+            android:label="Daftar Laporan Status Close"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminAllActivity"
+            android:label="Daftar Laporan Masuk"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ImageViewActivity"
+            android:label="Dokumentasi Pelaporan"/>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminPenugasanActivity"
+            android:label="Daftar Laporan Penugasan"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportDetail"
+            android:label="Detail Laporan On Scheduling"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportConfDetail"
+            android:label="Detail Laporan On Progress"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportAllDetailActivity"
+            android:label="Detail Laporan Masuk"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanAdminActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanAdminActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportAllProgresActivity"
+            android:label="Detail Laporan Penugasan"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanAdminActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanAdminActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportAllConfirmActivity"
+            android:label="Detail Lap Status Follow Up"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanAdminFollowActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanAdminFollowActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ReportAllConfirm2Activity"
+            android:label="Detail Konfirmasi Lap Teknisi"
+            android:parentActivityName="com.simap.dishub.far.ListLaporanAdminOnConfActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.ListLaporanAdminOnConfActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.StatusDetail"
+            android:label="Detail Status Teknisi"
+            android:parentActivityName="com.simap.dishub.far.StatusActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.StatusActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.StatusActivity"
+            android:label="Detail Status Teknisi"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/value/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.simap.dishub.far.MapsActivity"
+            android:label="@string/title_activity_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.UploadActivity"
+            android:label="Pelaporan Gangguan"
+            android:parentActivityName="com.simap.dishub.far.MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.MenuActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanActivity"
+            android:label="Cek Pelaporan"
+            android:parentActivityName="com.simap.dishub.far.MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.MenuActivity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanOnProgressTeknisiActivity"
+            android:label="Daftar Laporan On Scheduling"
+            android:parentActivityName="com.simap.dishub.far.Teknisi1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Teknisi1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminFollowActivity"
+            android:label="Daftar Lap Status Follow Up"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanAdminOnConfActivity"
+            android:label="Daftar Konfirmasi Lap Teknisi"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.ListLaporanOnConfActivity"
+            android:label="Daftar Laporan On Progress"
+            android:parentActivityName="com.simap.dishub.far.Teknisi1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Teknisi1Activity" />
+        </activity>
+        <activity android:name="com.simap.dishub.far.ImageActivity" />
+        <activity
+            android:name="com.simap.dishub.far.Upload3Activity"
+            android:label="Pelaporan"
+            android:parentActivityName="com.simap.dishub.far.Teknisi1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Teknisi1Activity" />
+        </activity>
+        <activity android:name="com.simap.dishub.far.TesActivity" />
+        <activity
+            android:name="com.simap.dishub.far.Report2Activity"
+            android:label="Daftar Laporan Progress"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.Report3Activity"
+            android:label="Daftar Laporan Confirmation"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+        <activity
+            android:name="com.simap.dishub.far.Report4Activity"
+            android:label="Daftar Laporan Close"
+            android:parentActivityName="com.simap.dishub.far.Pegawai1Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.simap.dishub.far.Pegawai1Activity" />
+        </activity>
+    </application>
+
+</manifest>

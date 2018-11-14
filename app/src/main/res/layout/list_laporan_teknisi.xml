@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textareaInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="areainfra"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textalamatInfra"
+        android:layout_width="fill_parent"
+        android:text="alm infra"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textwilayah"
+        android:layout_width="fill_parent"
+        android:text="alm infra"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textcategorysubInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="category"
+        android:paddingBottom="2dip"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textteknisiInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="teknisi"
+        android:paddingBottom="2dip"
+        android:textSize="12sp"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/textstartInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="start infra"
+        android:paddingBottom="2dip"
+        android:textSize="12sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textpelaporInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="pelapor"
+        android:paddingBottom="2dip"
+        android:textSize="14sp"
+        android:textColor="#A52A2A"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textnoteInfra"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="note"
+        android:paddingBottom="2dip"
+        android:textSize="14sp"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/textnoteadminInfra"
+        android:layout_width="fill_parent"
+        android:text="note admin"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:visibility="gone"
+        android:textSize="14sp"
+        android:textColor="#000000" />
+
+
+
+    <TextView
+        android:id="@+id/textstatusReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="status report"
+        android:textColor="#5d5d5d"
+        android:textStyle="bold" />
+</LinearLayout>
